@@ -1,1 +1,3 @@
-this dir contains file for displaying absolute path to working directory
+File handling readme
+the content in this directory if for handling file
+files are also executable

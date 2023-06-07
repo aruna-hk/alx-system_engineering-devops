@@ -1,3 +1,2 @@
-File handling readme
-the content in this directory if for handling file
-files are also executable
+LINUX SHELL AND FILE HANDLING
+shell nevigation and basic file handling commands in shell
