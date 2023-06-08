@@ -1,2 +1,2 @@
 #!/bin/bash
-chmod $(stat -c "%a" .) $(find. -type d) 
+chmod -Ruogo+x 
