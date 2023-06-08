@@ -1,2 +1,2 @@
 #!/bin/bash
-chown -h vinncent:staff _hello
+chown vinncent:staff $(readlink -f _hello)
