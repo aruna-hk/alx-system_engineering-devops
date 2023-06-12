@@ -6,3 +6,5 @@ SHELL REDIRECTION PROJECT
 3-twofiles- -display content of two files
 4-lastlines - display specified last lines
 5-firstlines- displaying first pecified lines
+6-third_line -display speciifi number
+7-file -silent creation of file
