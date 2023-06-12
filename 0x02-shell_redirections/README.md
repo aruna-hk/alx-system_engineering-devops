@@ -5,3 +5,4 @@ SHELL REDIRECTION PROJECT
 2-hellofile - dispaly content of file /etc/passwd
 3-twofiles- -display content of two files
 4-lastlines - display specified last lines
+5-firstlines- displaying first pecified lines
