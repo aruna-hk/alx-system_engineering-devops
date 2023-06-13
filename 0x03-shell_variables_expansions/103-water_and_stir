@@ -1,2 +1,2 @@
 #!/bin/bash
-echo $(($WATER+
+echo $(($WATER +$STIR))|tr 'A-Z' 'a-z':w
