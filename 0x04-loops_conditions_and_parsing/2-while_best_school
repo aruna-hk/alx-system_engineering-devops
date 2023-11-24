@@ -4,6 +4,6 @@ str='Best School'
 i=0
 while [[ $i -lt 10 ]];
 do
-   echo "$str"
-  (( i += 1 ))
+	echo "$str"
+	((i += 1))
 done
