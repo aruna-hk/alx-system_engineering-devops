@@ -1,5 +1,5 @@
 #!/usr//bin/env bash
-
+#until loop
 i=1
 str='Best School'
 until [ $i -gt 10 ]

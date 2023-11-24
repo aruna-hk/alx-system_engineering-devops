@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-
+#while and conditional statements
 i=1
 while [[ $i -lt 21 ]];
 do

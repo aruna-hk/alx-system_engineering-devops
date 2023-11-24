@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-
+#for - iterate ober output of a command
 list=$(ls)
 for i in $list
 do

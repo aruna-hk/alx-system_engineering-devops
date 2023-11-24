@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-
+#while loop
 str='Best School'
 i=0
 while [[ $i -lt 10 ]];

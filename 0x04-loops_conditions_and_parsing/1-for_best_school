@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-#
+#bash for loop
 str='Best School'
 
 for _ in {1..10}

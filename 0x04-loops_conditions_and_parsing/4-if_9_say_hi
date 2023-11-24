@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-
+#loop and conditional statements
 str='Best School'
 i=0
 while [[ $i -lt 10 ]];
