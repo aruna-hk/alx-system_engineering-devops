@@ -1,7 +1,6 @@
 #!/usr/bin/env bash
-
+#fizzbuzz with while
 i=1
-
 while [ $i -le 100 ]
 do
 	if [ $((i % 3)) -eq 0 ] && [ $((i % 5)) -eq 0 ];
