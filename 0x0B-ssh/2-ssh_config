@@ -1,6 +1,5 @@
-#!/usr/bin/env bash
-#configuring ~/.ssh/config to refuse password authentication
-#and use ~/.ssh/school
-
-echo "IdentityFile ~/.ssh/school" >> ~/.ssh/config
-echo "PasswordAuthentication no" >> ~/.ssh/config
+#config file
+Host 3.85.196.46
+    user ubuntu
+    IdentityFile ~/.ssh/school
+    PasswordAuthentication no
