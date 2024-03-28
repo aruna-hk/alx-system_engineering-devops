@@ -2,6 +2,7 @@
 #install and configure nginx
 apt-get update
 apt-get install nginx
+cd /; mkdir -p /www; cd /www; touch 0-index.html; echo "hello world!" > 0-index.html
 echo "user hk;
 pid  /run/nginx.pid;
 worker_processes auto;
