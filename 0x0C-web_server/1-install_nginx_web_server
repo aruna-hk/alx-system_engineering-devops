@@ -1,27 +1,5 @@
 #!/usr/bin/env bash
 #install and configure nginx
-apt-get update
 apt-get install nginx
-cd /; mkdir -p /www; cd /www; touch 0-index.html; echo "hello world!" > 0-index.html
-echo "user hk;
-pid  /run/nginx.pid;
-worker_processes auto;
-
-events {
-        worker_connections 768;
-        #multi_accept on;
-}
-http {
-        root /www;
-
-        server {
-                listen 80 default_server;
-                listen [::]:80 default_server;
-
-                location / { 
-                        index 0-index.html =404;
-                }
-        }
-}
-" > /etc/nginx/nginx.conf
+echo -e "Hello World!" > /var/www/html/index.nginx-debian.html
 nginx -s reload
