@@ -1,0 +1,26 @@
+#!/usr/bin/env bash
+#install and configure nginx
+apt-get update
+apt-get install nginx
+echo "user hk;
+pid  /run/nginx.pid;
+worker_processes auto;
+
+events {
+        worker_connections 768;
+        #multi_accept on;
+}
+http {
+        root /www;
+
+        server {
+                listen 80 default_server;
+                listen [::]:80 default_server;
+
+                location / { 
+                        index 0-index.html =404;
+                }
+        }
+}
+" > /etc/nginx/nginx.conf
+nginx -s reload
