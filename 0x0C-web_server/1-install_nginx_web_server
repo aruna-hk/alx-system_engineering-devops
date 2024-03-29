@@ -5,7 +5,7 @@ sudo apt-get update -y
 sudo apt-get install nginx -y
 
 mkdir -p /web
-echo "hello world!" > /web/0-index.html;
+echo "Hello World!" > /web/0-index.html;
 
 echo "user ubuntu;
 worker_processes auto;
