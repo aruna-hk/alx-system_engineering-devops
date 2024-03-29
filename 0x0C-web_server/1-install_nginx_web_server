@@ -7,7 +7,7 @@ sudo apt-get install nginx -y
 mkdir -p /web
 echo "Hello World!" > /web/0-index.html;
 
-echo "user ubuntu;
+echo "user hk;
 worker_processes auto;
 pid /run/nginx.pid;
 
@@ -17,12 +17,15 @@ events {
 }
 
 http {
-        server {
-                listen 80 default_server;
-                location / {
-                        root /web;
-                        index 0-index.html;
-                }
-        }
+	server {
+		listen 80 default_server;
+		location /redirect_me/ {
+			return 301 https://www.youtube.com/watch?v=QH2-TGUlwu4;
+		}
+		location / {
+			root /web;
+			index 0-index.html;
+		}
+	}
 }" >/etc/nginx/nginx.conf
 nginx -s reload
