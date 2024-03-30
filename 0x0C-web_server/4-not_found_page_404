@@ -1,0 +1,6 @@
+#!/usr/bin/env bash
+#error log file
+mkdir -p /web
+echo "Ceci n'est pas une page" > /web/404.html
+sed -i '/root \/web;/a\ \t\terror_page 404 /404.html;' 1-install_nginx_web_server
+./1-install_nginx_web_server

@@ -21,7 +21,7 @@ fi
 
 chown -R ubuntu /web
 
-echo "user ubuntu;
+echo "user Ubuntu;
 worker_processes auto;
 pid /run/nginx.pid;
 
@@ -34,8 +34,11 @@ http {
         server {
                 listen 80 default_server;
 		listen [::]:80 default_server;
+                root /web;
+ 		location /redirect_me/{
+			return 301; 
+		}
                 location / {
-                        root /web;
                         index 0-index.html;
                 }
         }
