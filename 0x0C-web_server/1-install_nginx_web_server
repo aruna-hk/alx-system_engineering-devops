@@ -4,8 +4,21 @@
 sudo apt-get update -y
 sudo apt-get install nginx -y
 
+#creat web directory and landing page
 mkdir -p /web
 echo "Hello World!" > /web/0-index.html;
+
+#check if user ubuntu present
+#if so continue else create the user
+
+if id "ubuntu" &>/dev/null;
+then
+    echo "user exists"
+else
+    sudo useradd -m ubuntu --shell /bin/bash
+    sudo usermod -aG sudo ubuntu
+fi
+
 chown -R ubuntu /web
 
 echo "user ubuntu;
@@ -21,9 +34,6 @@ http {
         server {
                 listen 80 default_server;
 		listen [::]:80 default_server;
- 		location /redirect_me/{
-			return 301; 
-		}
                 location / {
                         root /web;
                         index 0-index.html;
