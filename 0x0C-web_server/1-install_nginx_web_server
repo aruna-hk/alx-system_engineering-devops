@@ -2,11 +2,11 @@
 #installing and configuration of nginx
 
 sudo apt-get update -y
-sudo apt-get install nginx -y
-
-mv /var/www/html/index.nginx-debian.html /var/www/html/index.html
-echo "Hello World!" > /var/www/html/index.html
-
-chown -R ubuntu /var/www/html
-
-nginx -s reload
+sudo apt-get install -y nginx
+sudo chown -R ubuntu /var/www
+if [ -f /var/www/html/index.nginx-debian.html ];
+then
+	mv /var/www/html/index.nginx-debian.html /var/www/html/index.html
+fi
+echo "Hello World" > /var/www/html/html
+sudo service nginx start
