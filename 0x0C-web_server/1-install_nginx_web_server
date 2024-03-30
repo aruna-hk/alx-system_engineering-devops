@@ -4,44 +4,9 @@
 sudo apt-get update -y
 sudo apt-get install nginx -y
 
-#creat web directory and landing page
-mkdir -p /web
-echo "Hello World!" > /web/0-index.html;
+mv /var/www/html/index.nginx-debian.html /var/www/html/index.html
+echo "Hello World!" > /var/www/html/index.html
 
-#check if user ubuntu present
-#if so continue else create the user
+chown -R ubuntu /var/www/html
 
-if id "ubuntu" &>/dev/null;
-then
-    echo "user exists"
-else
-    sudo useradd -m ubuntu --shell /bin/bash
-    sudo usermod -aG sudo ubuntu
-fi
-
-chown -R ubuntu /web
-
-echo "user Ubuntu;
-worker_processes auto;
-pid /run/nginx.pid;
-
-events {
-    worker_connections 768;
-    # multi_accept on;
-}
-
-http {
-        server {
-                listen 80 default_server;
-		listen [::]:80 default_server;
-                root /web;
- 		location /redirect_me/{
-			return 301; 
-		}
-                location / {
-                        index 0-index.html;
-                }
-        }
-}" >/etc/nginx/nginx.conf
 nginx -s reload
-ufw allow 'Nginx Full'
