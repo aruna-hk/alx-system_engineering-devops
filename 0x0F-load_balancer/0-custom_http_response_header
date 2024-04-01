@@ -1,0 +1,38 @@
+#!/usr/bin/env bash
+#installing and configuration of nginx
+
+apt-get update -y
+sudo apt upgrade -y
+apt-get install nginx -y
+
+#creat web directory and landing page
+mkdir -p /web
+echo "Hello World!" > /web/0-index.html
+
+
+echo "user ubuntu;
+worker_processes auto;
+pid /run/nginx.pid;
+
+events {
+    worker_connections 768;
+    # multi_accept on;
+}
+
+http {
+        server {
+                root /web;
+                error_page 404 /404.html;
+                listen 80 default_server;
+                listen [::]:80 default_server;
+                server_name 419308-web-02;
+                add_header X-Served_by \$hostname;
+                location /redirect_me/{
+                        return 301; 
+                }
+                location / {
+                        index 0-index.html;
+                }
+        }
+}" >/etc/nginx/nginx.conf
+nginx -s reload
