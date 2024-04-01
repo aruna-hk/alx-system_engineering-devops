@@ -2,13 +2,16 @@
 # web redirection
 #parmanent redirection
 
-apt-get update
-apt-get -y install nginx
+udo apt-get update
+sudo apt-get -y install nginx
+
+sudo ufw allow 'Nginx HTTP'
 
 echo "Hello World!" | sudo tee /var/www/html/index.html
-service nginx start
+
+sudo service nginx start
 
 sed -i '/server_name _;/a\ \tlocation /redirect_me/{\n\t\treturn 301; \n\t}'\
  /etc/nginx/sites-available/default
 
-nginx -s reload
+sudo nginx -s reload
