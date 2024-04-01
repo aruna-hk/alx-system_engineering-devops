@@ -1,40 +1,12 @@
 #!/usr/bin/env bash
 #installing and configuration of nginx
 
+apt-get remove nginx nginx-common nginx-full nginx-core -y
+apt-get purge nginx nginx-common nginx-full nginx-core -y
+apt autoremove -y
 apt-get update -y
-sudo apt upgrade -y
 apt-get install nginx -y
 
-dpkg-reconfigure tzdata -u --default-priority
-dpkg-reconfigure locales -u --default-priority
-hostnamectl set-hostname 419308-web-01
+echo "Hello World!" > /var/www/html/index.html
 
-ufw allow ssh
-ufw allow http
-
-#creat web directory and landing page
-mkdir -p /web
-echo "Hello World!" > /web/0-index.html;
-
-
-echo "user ubuntu;
-worker_processes auto;
-pid /run/nginx.pid;
-
-events {
-    worker_connections 768;
-    # multi_accept on;
-}
-
-http {
-        server {
-                listen 80 default_server;
-                listen [::]:80 default_server;
-                server_name 419308-web-01;
-                location / {
-                        root /web;
-                        index 0-index.html;
-                }
-        }
-}" >/etc/nginx/nginx.conf
 nginx -s reload
