@@ -19,7 +19,7 @@ echo "Ceci n'est pas une page" > /var/www/html/404.html
 sed -i '/server_name _;/a\\terror_page 404 /404.html;' \
 /etc/nginx/sites-available/default
 
-sed -i "/server_name _;/a\\\tadd_header X-Server-By \$hostname;" \
+sed -i "/server_name _;/a\\\tadd_header X-Served-By \$hostname;" \
 /etc/nginx/sites-available/default
 
 sudo service nginx restart
