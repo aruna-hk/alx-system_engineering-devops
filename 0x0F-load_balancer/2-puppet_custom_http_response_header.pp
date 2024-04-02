@@ -1,7 +1,7 @@
-#web server puppet manifest
+#web server puppet manifes
 
 $s_content = "#server configuration
-
+#default server
 server {
 	#listening ports and ip all ips
 	listen 80 default_server;
@@ -34,8 +34,13 @@ server {
 $landing_page = "Hello World!\n"
 $error_page = "Ceci n'est pas une page\n"
 
+exec {'apt-get update':
+  command => '/usr/bin/apt-get update',
+}
+
 package {'nginx':
-  ensure => installed,
+  ensure  => installed,
+  require => Exec['apt-get update'],
 }
 
 file {'config':
