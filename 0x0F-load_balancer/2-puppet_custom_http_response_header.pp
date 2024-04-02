@@ -57,6 +57,7 @@ file {'page':
   path    => '/var/www/html/index.html',
   content => $landing_page,
   require => Package['nginx'],
+  notify  => Service['nginx'],
 }
 
 file {'error':
