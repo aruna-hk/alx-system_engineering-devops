@@ -14,7 +14,7 @@ server {
 	server_name _;
 
 	#server custome header
-	add_header X_Served_By \$hostname;
+	add_header X-Served-By \$hostname;
 
 	#error page
 	error_page 404 /404.html;
