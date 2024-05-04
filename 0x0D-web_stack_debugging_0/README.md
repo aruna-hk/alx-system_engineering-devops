@@ -1,3 +1,4 @@
+
 #WEB DEBUGGING
  Web stack debugging steps
 Intro
@@ -93,5 +94,5 @@ If a piece of Software isn’t behaving as expected, it can obviously be because
         ps auxf
     Is there anything interesting in the logs? look for log files in /var/log/ and tail -f is your friend
 
-#content of directory
- 0-nginx_likes_port_80 - file contain command to start web server on a ubuntu on docker
+<author><kiptooharon.hk@gmail.com>
+curtesy of ALX
