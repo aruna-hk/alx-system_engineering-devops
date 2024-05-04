@@ -1,4 +1,6 @@
 #!/usr/bin/env bash
 #start nginx web server
-apt install nginx
+apt update -y
+apt install nginx -y
+apt install curl -y
 service nginx start
