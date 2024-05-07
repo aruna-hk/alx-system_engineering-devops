@@ -1,2 +1,4 @@
 #!/usr/bin/env bash
+#startin apache web server
+#container defaults to stopped
 service apache2 start
