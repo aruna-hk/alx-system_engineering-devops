@@ -1,4 +1,5 @@
 #!/usr/bin/env bash
 #startin apache web server
 #container defaults to stopped
+echo "Hello Holberton" > /var/www/html/index.html
 service apache2 start
